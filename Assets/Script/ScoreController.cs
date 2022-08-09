@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ScoreController : MonoBehaviour
 {
-    public Text Score;
+    public TextMeshProUGUI Score;
+    int p1 = 0 ;
     // Start is called before the first frame update
     void Start()
     {
-        int p1;
     }
 
     // Update is called once per frame
