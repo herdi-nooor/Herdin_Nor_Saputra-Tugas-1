@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyContrpller : MonoBehaviour
+public class HumanController : MonoBehaviour
 {
     public Vector2 Speed;
     public float Forward;
-    public Rigidbody2D Enemy;
+    public Rigidbody2D Human;
     public SpawnController spawnManager;
     public PlayerController player;
     // Start is called before the first frame update
     void Start()
     {
-        Enemy = GetComponent<Rigidbody2D>();
-        Enemy.velocity = Speed;
+        Human = GetComponent<Rigidbody2D>();
+        Human.velocity = Speed;
     }
 
     // Update is called once per frame
@@ -25,7 +25,6 @@ public class EnemyContrpller : MonoBehaviour
     {
         if (collision.GetComponent<Rigidbody2D>().name == "Walldestroyer")
         {
-            player.subtratLifePoint();
             spawnManager.removeEnemy(gameObject);
         }
     }
@@ -33,6 +32,7 @@ public class EnemyContrpller : MonoBehaviour
     private void OnMouseDown()
     {
         spawnManager.removeEnemy(gameObject);
-    }
+        player.subtratLifePoint();
 
+    }
 }

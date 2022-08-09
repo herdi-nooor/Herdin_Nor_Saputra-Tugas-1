@@ -13,7 +13,7 @@ public class SpawnController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EnemyList = new List<GameObject>;
+        EnemyList = new List<GameObject>();
         timerSpawn = 0;
     }
 
@@ -21,7 +21,6 @@ public class SpawnController : MonoBehaviour
     void Update()
     {
         SpawnEnemy();
-        //StartCoroutine(SpawnInit());
     }
 
     private void SpawnEnemy()
@@ -35,23 +34,23 @@ public class SpawnController : MonoBehaviour
                 GenerateRandom();
             }
 
-            spawnInterval
+            timerSpawn -= spawnInterval;
         }
     }
 
     private void GenerateRandom()
     {
-        
+        int randomIndex = UnityEngine.Random.Range(0, ListEnemyTemplate.Count);
+        GameObject Enemy = Instantiate(ListEnemyTemplate[randomIndex]);
+        Enemy.SetActive(true);
+        EnemyList.Add(Enemy);
     }
 
-    /*IEnumerator SpawnInit()
+    public void removeEnemy(GameObject enemy)
     {
-        float spawnX = Random.Range(-6, 6);
-        Vector3 spawnPosition = new Vector3(spawnX, 6, 0);
+        EnemyList.Remove(enemy);
+        Destroy(enemy);
+    }
 
-        Instantiate(Enemy, spawnPosition, Quaternion.identity);
-
-        yield return new WaitForSeconds(10);
-
-    }*/
+    
 }
