@@ -21,18 +21,17 @@ public class PlayerController : MonoBehaviour
     public void subtratLifePoint()
     {
         this.LifePoint -= 1;
-        Debug.Log(LifePoint);
         removeLifeIcon(LifePoint);
         if (LifePoint == 0)
         {
             panelGameOver.SetActive(true);
             Debug.Log("gameover");
+            Time.timeScale = 0f;
         }
     }
     public void removeLifeIcon(int index)
     {
         Destroy(LifeIcon[index]);
         LifeIcon.RemoveAt(LifePoint);
-        Debug.Log(index);
     }
 }
