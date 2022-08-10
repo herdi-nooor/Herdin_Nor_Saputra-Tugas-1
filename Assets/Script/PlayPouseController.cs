@@ -7,8 +7,6 @@ using UnityEngine;
 
 public class PlayPouseController : MonoBehaviour
 {
-    /*public KeyCode pauseKey;
-    public GameObject pauseBtn;*/
     public ScoreController score;
     public GameObject GameOverPanel;
     // Start is called before the first frame update
