@@ -42,5 +42,13 @@ public class ScoreController : MonoBehaviour
         }
     }
 
+    public void ResetScore()
+    {
+        if (!play)
+        {
+            p1 = 0;
+        }
+    }
+
 
 }

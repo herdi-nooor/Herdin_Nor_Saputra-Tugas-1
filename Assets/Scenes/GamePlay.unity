@@ -759,6 +759,7 @@ MonoBehaviour:
   - {fileID: 1689080499}
   - {fileID: 1004010433}
   panelGameOver: {fileID: 184853723}
+  score: {fileID: 17313093}
 --- !u!4 &258147307
 Transform:
   m_ObjectHideFlags: 0

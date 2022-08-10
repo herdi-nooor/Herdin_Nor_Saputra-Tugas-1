@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private int LifePoint = 3;
     public List<GameObject> LifeIcon;
     public GameObject panelGameOver;
+    public ScoreController score;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,8 @@ public class PlayerController : MonoBehaviour
         if (LifePoint == 0)
         {
             panelGameOver.SetActive(true);
+            score.Play = false;
+            score.ResetScore();
             Debug.Log("gameover");
             Time.timeScale = 0f;
         }
